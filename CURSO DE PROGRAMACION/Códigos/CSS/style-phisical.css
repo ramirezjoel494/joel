@@ -1,0 +1,189 @@
+:root{
+    --gris1:#616161;
+    --gris2: #212121;
+    --gris3: #212429;
+    
+    font-family: 'Roboto', sans-serif;     /*CSS rules to specify families - Regla para CSS de fonts.google */
+
+}
+
+html {
+    scroll-behavior: smooth;    /* Para efecto de scrollbar */
+}
+
+body{
+    margin:0px     /* sin margen entre el cuerpo y la pg */
+}
+
+.fondo{
+    background-image: linear-gradient(to top,rgba(255,255,255,.5),transparent);
+    height: 350px;
+}
+
+
+header a{ 
+    color: var(--gris1);        /* a: ancla */
+    text-decoration: none;    /*Sin remarcar  las anclas*/
+    
+}
+
+header a:hover{         /* Hover - selector pseudoclase  */
+    color:var(--gris2);
+}
+
+header nav details summary{    /*  Selector de setup y conceptos esenciales*/
+    color: var(--gris2);
+    font-size: 14px;      
+    font-weight: bold;       /* grosor de letra  */
+    line-height: 24px;      /* Separación de lineas entre titulosy contenido */
+}
+
+
+header {
+    font-size: 14px;     /* tamaño global de cabecera*/
+    font-weight: 400px;   /*Peso o grosor*/
+    color: var(--gris1);
+    /*  position: static;     Valor por defecto */
+    /* background: blue; */
+    position: absolute;    
+    left: -242px;
+    top: 64px;
+    
+}
+
+.header {
+    position: sticky;     /*Para que el menú siga el movimiento del scrollbar */
+    top: 0px;
+}
+
+.header-content {
+    position: relative;     
+    line-height: 16px;    /* Separación de linea */
+}
+
+header li{
+    margin-bottom: 16px;
+}
+
+.section-content + hr{
+    display: none;    /* Para anular la franja que divide las secciones */
+    
+}
+
+.section-content ol li{
+    line-height: 24px;    /* Separación de linea */
+    
+}
+
+.section-content ul li{
+    margin-bottom: 16px;  /* Margenes inferiores de los ul li */
+    
+}
+
+.main{
+    
+    margin: auto;  /* Se centra el bloque con margenes automaticos */
+    width: 902px;
+    margin-left: 290px;
+}
+
+.wrapper{
+    width: 702px;
+    margin: auto;
+}
+
+.main-content{
+   /* padding:20px;  */
+    background: white;
+   
+}
+
+.section-content:first-of-type{
+    margin:0;
+    
+}
+
+h1{
+    font-size: 60px;
+    font-weight: normal;
+    margin-top: 64px;     /* Margen hacia arriba */
+    margin-bottom: 16px;   /* Margen hacia abajo */
+}
+
+h1 ~ p{
+    margin-bottom: 64px;   /* Selector de hermanos afectará a los h1 con texto de parrafos  */
+}
+
+hr{
+   margin-bottom: 64px;
+}
+
+h2{
+    font-size: 2em;
+    margin: 64px 0 40px 0;     /*Margen de 40 px arriba y abajo y 0px a los costados */
+}
+
+h3{
+    font-size: 1.5em;
+    margin-top: 16px;    /* Margen de 16 px hacia arriba */
+    margin-bottom: 24px;   /* Margen de 24 px hacia abajo */
+}
+
+
+
+.section-content img{
+    margin-top: 40px;      /* Margen que separa las imagenes de los parrafos */
+}
+
+blockquote{
+    font-size: 24px;
+    margin: 32px 0;
+    padding-left: 16px;
+    line-height: 24px;
+    border-left: 4px solid var(--gris3);    /* Borde del blockquote */
+}
+
+blockquote span{
+    color:var(--gris1);  /* Color del blockquote */
+
+}
+
+blockquote span::before{
+    content: "-";
+}
+
+h3::before{
+    content: "";
+}
+
+.ultima {
+    margin-top: 55px;
+    margin-left: 350px;   /* Ubicación de links para correos */
+}
+
+.section-content{
+    counter-reset: subtitulos;
+    
+}
+
+.section-content h3{
+    counter-increment: subtitulos;
+    padding-bottom: 8px;
+    position: relative;    /* Para que se mueva dentro del bloque */
+}
+
+.section-content h3::after{
+    content:"";
+    width: 80px;
+    height:4px;
+    background:var(--gris1);
+    display: inline-block;
+    position: absolute;      /* Bordesito de linea */
+    left: 0;
+    bottom: 0;
+    
+}
+
+.section-content h3::before{
+    content: counter(subtitulos,decimal) ".  ";
+}
