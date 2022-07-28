@@ -1,0 +1,164 @@
+:root{
+    --blanco1: white;
+    --blanco2: #A5A3A5;
+    --blanco3: #212429;
+    
+    font-family: 'Nunito', sans-serif;     /*CSS rules to specify families - Regla para CSS de fonts.google */
+
+}
+
+body {
+    margin: 0px;      /* Para que todo quede sin margen */
+    background: #251F24;
+}
+
+header {
+    font-size: 14px;     /* tamaño global de cabecera*/
+    font-weight: 400px;   /*Peso o grosor*/
+    color: var(--blanco1);
+
+}
+
+.fondo {
+    background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+    height: 350px;
+}
+
+header a{ 
+    color: var(--blanco2);        /* a: ancla */
+    text-decoration: none;    /*Sin remarcar  las anclas*/
+   
+}
+
+header li {
+    color: var(--blanco2);
+}
+
+header a:hover{         /* Hover - selector pseudoclase  */
+    color:var(--blanco2);
+}
+
+header nav details summary{    /*  Selector de setup y conceptos esenciales*/
+    color: var(--blanco1);
+    font-size: 14px;      
+    font-weight: bold;       /* grosor de letra  */
+}
+
+
+
+h1{
+    font-size: 60px;
+    color: var(--blanco1);
+    font-weight: normal;
+
+    margin-block-start: 64px;    /* Margen logico desde arriba hacia el h1 */
+    margin-block-end: 16px;     /* Margen logico desde abajo hacia el h1 */
+}
+
+hr {
+    margin-block: 40px;    /* Margen logico para todos los lados */
+    border-color: #616161;
+}
+
+h2{
+    font-size: 2em;
+    color: var(--blanco1);
+    font-weight: normal;
+    margin-block: 40px;
+}
+
+h3{
+    font-size: 1.5em;
+    color: var(--blanco1);
+    font-weight: 600;
+    margin-block: 16px;   /* Margen logico para todos los lados */
+}
+
+.hero{
+    background-image:linear-gradient(to top, rgba(255,255,255,.3),transparent),url("../../Images2/patron-1.png");
+    height: 350px;
+}
+
+h3::before{
+    content: "";
+}
+
+h3::after{
+    content:"";
+    width:32px;
+    height:4px;
+    /* background:var(--blanco1);  */
+    display: inline-block;
+}
+
+.section-content{
+    counter-reset: subtitulos;
+}
+
+
+.section-content ol,ul {
+    color: var(--blanco1);
+}
+
+
+.section-content ul {
+    margin-block-start: 16px;
+
+}
+
+.section-content img {
+    display: block;
+    max-inline-size: 100%;    /* Para que se acomode la imagen segun lo redimensione el user con (valores logicos)*/
+    /* overflow: auto;   para crear un scrollbar en ese bloque  */
+}
+
+.section-content h3{
+    counter-increment: subtitulos;
+}
+
+.section-content h3::before{
+    content: counter(subtitulos,decimal) ".  ";
+}
+
+p {
+    color: var(--blanco2)
+}
+
+.unica{
+    color: var(--blanco1);
+}
+
+blockquote {
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background-color: #3A3539;
+    border-radius: 8px;     /* borde de recuadro con radio */
+    padding-inline-start: 24px;   /* Padding en la linea de la izquierda */
+    padding-inline-end: 24px;    /* Padding en la linea ha la derecha */
+    padding-block-start: 24px;   /* Padding hacia arriba */
+    padding-block-end: 24px;     /* Padding hacia abajo */
+    line-height: 32px;
+    font-size: 24px;
+}
+
+blockquote span,p{
+    color: var(--blanco1);    /* Color de las letras del blockquote */
+}
+
+.main hr{
+    display: none;
+}
+
+.main {
+    border: red solid 3px;
+}
+
+main .wrapper {
+    max-inline-size: 902px;     /* tamaño maximo para que el user redimensione */
+    margin: auto;
+  /*  border: blue solid 3px;  */
+}
+
+.main-content {
+    padding-inline: 16px;    /* Padding solo en la linea y no en todos los lados con valores logicos */
+}
