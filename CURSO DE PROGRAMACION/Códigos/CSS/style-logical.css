@@ -1,0 +1,376 @@
+:root{
+    --blanco1: white;
+    --blanco2: #A5A3A5;
+    --blanco3: #212429;
+    
+    font-family:'Nunito', sans-serif;      /*CSS rules to specify families - Regla para CSS de fonts.google */
+
+}
+
+html {
+    scroll-behavior: smooth;    /* Para efecto de scrollbar */
+}
+
+body {
+    margin: 0px;      /* Para que todo quede sin margen */
+    background: #251F24;
+}
+
+.header { 
+    /*position: sticky;  /* Para que el menu sea relativo al header. Pero tambien puedo usar sticky para que se mantenga fijo */
+    /*inset-block-start: -45px;  /*Separacion de arriba del menu */
+    /*inline-size: 190px; /* Tamaño que ocupa el menú cuando se minimiza o redimensiona */
+   /* margin-inline-start: 200px;   /* Margen izquiero del menu cuando se redimensiona */
+    border: 0px;
+}
+
+.header-content {
+    /*position: relative; /* Para que el menu sea relativo al contenido del header-content */
+    /*inset-block-start: 65px;   /* Separacion de arriba del menu */
+    padding-inline: 30px;
+}
+
+header {
+    font-size: 14px;     /* tamaño global de cabecera*/
+    font-weight: 400px;   /* Peso o grosor*/
+    color: var(--blanco1);
+    margin-block-start: 20px;
+    
+    /* Menú */
+
+    /*position: absolute; */
+    /* top: 0; */
+    /*inset-block-start: 0;   /* Debe ser relativo a algo. En este caso a .header */
+    /* bottom */  
+   /* inset-block-end: ;   */
+    /* Left */
+    /*inset-inline-start: 30px; 
+    /* right 
+    inset-inline-end: */
+}
+
+
+.fondo {
+    background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+    block-size: 50px;   /* Tamaño del background a lo que alto se refiere */
+}
+
+header a{ 
+    color: var(--blanco2);        /* a: ancla */
+    text-decoration: none;    /* Sin remarcar  las anclas*/
+   
+}
+
+header a:hover{         /* Hover - selector pseudoclase que cambia de color segun el mouse */
+    color:var(--blanco1);
+}
+
+header li {
+    color: var(--blanco2);
+    margin-block-end: 16px;   /* Separacion de linea de los li del menu */
+}
+
+header a:hover{         /* Hover - selector pseudoclase  */
+    color:var(--blanco2);
+}
+
+header nav details summary{    /*  Selector de setup y conceptos esenciales*/
+    color: var(--blanco1);
+    font-size: 14px;      
+    font-weight: bold;       /* grosor de letra  */
+}
+
+
+
+h1{
+    font-size: 40px;
+    color: var(--blanco1);
+    font-weight: normal;
+
+    margin-block-start: 20px;    /* Margen logico desde arriba hacia el h1 */
+    margin-block-end: 16px;     /* Margen logico desde abajo hacia el h1 */
+
+    /* Alineacion de textos 
+    text-align: center, justify, left...; alineacion de texto para el centro*/
+    
+    /* Tamaño de fuente
+    font-size: 20px;  */
+
+    /* Alineacion de textos con valores logicos
+    text-align: start, justify, end, .... */;
+
+}
+
+hr {
+    margin-block: 40px;    /* Margen logico para todos los lados */
+    border-color: #616161;
+}
+
+h2{
+    font-size: 2em;
+    color: var(--blanco1);
+    font-weight: normal;
+    margin-block: 40px;
+}
+
+h3{
+    font-size: 1.5em;
+    color: var(--blanco1);
+    font-weight: 600;
+    margin-block: 16px;   /* Margen logico para todos los lados */
+    margin-block-start: 40px;
+}
+
+.hero{
+    background-image:linear-gradient(to top, rgba(255,255,255,.3),transparent),url("../../Images2/patron-1.png");
+    height: 350px;
+    /* Caracteristicas del Degradado */
+}
+
+h3::before{
+    content: "";
+}
+
+h3::after{
+    content:"";
+    width:32px;    /* Ancho del h3 */
+    height:4px;    /* Grosor de letras */
+    /* background:var(--blanco1);  */
+    display: inline-block;   /* Modo de lectura */
+}
+
+.section-content{
+    counter-reset: subtitulos;
+}
+
+
+.section-content ol,ul {
+    color: var(--blanco1);   /* Color de letra para los ol y ul */
+}
+
+.section-content ul li {
+    margin-block-end: 16px;   /* Separacion de lineas para los ul */  
+    fill: solid var(--blanco1);
+}
+
+
+.section-content img {
+    display: block;
+    max-inline-size: 100%;    /* Para que se acomode la imagen segun lo redimensione el user con (valores logicos)*/
+    /* overflow: auto;   para crear un scrollbar en ese bloque  */
+}
+
+.section-content h3{
+    counter-increment: subtitulos;
+}
+
+.section-content h3::before{
+    content: counter(subtitulos,decimal) ".  ";
+}
+
+.main .section-content p {
+    color: var(--blanco2);   /* Color de las letras de parrafos */
+}
+
+.main-content p{
+    color: var(--blanco2);
+}
+
+pre{
+    background-color: #3A3539;
+    border-radius: 8px;
+    padding: 40px;
+    gap: 10px;
+    inset-block:40px;
+    margin: auto;
+    color: var(--blanco1);
+    font-family: 'Nunito', sans-serif; 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    overflow: auto;
+
+    border: 10px solid #5551FF;  /* Borde de todo el recuadro */
+    box-shadow: -10px 10px 0 0 #ABAAF6;  /* Sombra del recuadro */
+    margin-block-end: 60px;  /* Margen inferior del recuadro */
+    
+    /* Para hacer un ovalo en vez de recuaro: 
+    border-radius: 50%; */
+
+    /* Para hacer un circulo perfecto en vez de recuadro: 
+    inline-size: 400px;
+    block-size: 400px;
+    Hago inline-size y block-size iguales */
+
+    /* Border-radius con propiedades logicas: */
+    border-start-start-radius: 60px;  /* Radio para borde superior izquierdo */
+}
+
+.unica{
+    color: var(--blanco1);   /* Color de la clase "unica" */
+}
+
+blockquote {
+    margin-block-start: 60px;
+    margin-block-end: 63px;
+    color: var(--blanco1);
+    background-color: #3A3539;
+    border-radius: 8px;     /* borde de recuadro con radio */
+    padding-inline-start: 24px;   /* Padding en la linea de la izquierda */
+    padding-inline-end: 24px;    /* Padding en la linea ha la derecha */
+    padding-block-start: 24px;   /* Padding hacia arriba */
+    padding-block-end: 24px;     /* Padding hacia abajo */
+    line-height: 32px;
+    font-size: 24px;
+
+    /* Practicando bordes:  */
+
+   /* border: 10px solid red;   borde de todo el recuadro 
+    border-left: 5px solid blue;  Borde izquierdo del recuadro 
+    border-inline-start: 5px solid white;  Borde izquierdo del recuadro usando valores logicos
+    border-block-end: 20px solid pink;  Borde inferior usando propiedades logicas
+    border-inline-end: 5px solid green; Borde derecho usando propiedades logicas 
+    border-block-start-color: blue;    Borde superior usando propiedades logicas */
+
+ }
+
+blockquote span {
+    color: var(--blanco1);    /* Color de las letras del blockquote */
+}
+
+blockquote p {
+    color: var(--blanco1);
+}
+
+.main hr{
+    display: none;   /* Desactivo la linea separadora hr */
+}
+
+.main {
+    margin-left: 0px; 
+}
+
+main .wrapper {
+    max-inline-size: 802px;     /* tamaño maximo para que el user redimensione */
+    margin: auto;              /* Encuadro el bloque en la zona central */
+  /*  border: blue solid 3px;  */
+}
+
+.main-content {
+    padding-inline: 16px;    /* Padding solo en la linea y no en todos los lados con valores logicos */
+
+}
+
+.ultima {
+    margin-block-start: 55px;
+    margin-inline-start: 0px;   /* Ubicación de links para correos */
+}
+
+.slider-base {    /* Slider base o soporte */
+    border: 0px solid red;
+}
+
+.slider-container {   /* Slider contenedor 
+    border: 1px solid purple; */
+    /* block-size: 100px;    Altura del contenedor si no quiero que se vea su 100% */
+    display: block;   /* Para que pueda tomar la altura de 100 px */
+    overflow: auto;  /* agregar scrollbar */
+    scroll-behavior: smooth;  /* efecto de scrollbar */
+    white-space: nowrap;   /* Generar el scroll al colocar en la misma linea los el1 y el2 */
+    font-size: 0;  /* Para que no hayan espacios entre videos */
+}
+
+.video {   /* Clase video que se encuentra en la etiqueta iframe. El contenido de iframe se obtuvo de youtube. Consigo el video: Compartir >> insertar >> copio todo el iframe */
+    margin:0;  /* Ya que los h1 tienen margen por defecto */
+   /* border: 1px solid blue; */
+    display: inline-block; /* Con elementos inline no le puedo brindar tamaños. Pero cuando combino inline - block si puedo */
+    width: 100%;  /* ancho */
+    height: auto;  /* Altura automatica */
+    aspect-ratio: 16/9; /* "16/9" proporcion comun de los videos en horizontal. En vertical: 9/16 */
+    
+}
+
+.slider-bullet{  /* Bolitas para desplazar los videos tipo slider */
+    display:inline-block;  /* Para que tenga las caracteristicas combinadas inline-blocl */
+    inline-size: 15px;   /* Tamaño de bolitas */
+    block-size: 15px;  /* Tamaño de bolitas */
+    background: var(--blanco1);  /* Color */
+    border-radius: 80%;  /* Agregar redondez */
+   
+}
+
+.slider-bullet-list {
+    /* border: 1px solid red;  */
+    text-align: center;  /* Ubicacion de bolitas */
+    margin-block-start: 40px;
+}
+
+.formulario input{
+    inline-size: 100%;
+    border: 1px solid var(--blanco1);
+    background: #251F24;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding-inline: 16px;
+    padding-block: 12px;
+    color: var(--blanco1);
+    font-size: 16px;
+    display: block;
+    margin-block-end: 24px;
+
+}
+
+.formulario input[type="submit"] {  /* Selector de tipo atributo para el boton */
+    background: #157EFB;
+    border: none;
+}
+
+/* Responsive Design 
+
+Son tecnicas usadas en HTML, CSS y javascript como frontends para adaptar un sitio web 
+con contenido, para distintas resoluciones */
+
+/* media query son una regla especial de CCS para modificar la hoja segun condiciones */
+
+@media screen and (min-width:1366px) {
+
+        .fondo {
+        background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+        block-size: 350px;   /* Tamaño del background a lo que alto se refiere */
+        }
+
+        .header { 
+            position: sticky;  /* Para que el menu sea relativo al header. Pero tambien puedo usar sticky para que se mantenga fijo */
+            inset-block-start: -45px;  /* Separacion de arriba del menu */
+            margin-inline-start: 10px;
+        }
+
+        .header-content {
+            position: relative;  /* Para que el menu sea relativo al contenido del header-content */
+            inset-block-start: 65px;   /* Separacion de arriba del menu */
+            padding: 0px;
+        }
+
+        header {
+
+            /*  font-size: 14px;     
+              color: var(--blanco1);    Los dejo igual 
+              font-weight: 400px; Lo dejo igual */
+              position: absolute;  
+              inset-block-start: 0;  /* Debe ser relativo a algo. En este caso a .header */     
+              inset-inline-start: 45px;  
+              inline-size: 150px;  
+              
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-block-start: 64px; 
+        }
+    
+       
+}
+/* Cuando el user redimensiona la ventana y la coloca a un ancho menor a 1100px, tomará
+las características del código que está fue del media query. */
+
